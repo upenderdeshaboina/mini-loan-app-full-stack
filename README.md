@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Loan Repayment App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The **Loan Repayment App** is a web application that allows users to manage their loan repayments. Consumers can view their loan details and make repayments, while admins can manage loans by approving or rejecting applications. This app is built with **React** for the frontend and **Node.js** with **Express** for the backend. JWT is used for authentication, and data is stored in **SQLite**.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Consumers**:
+  - View loan repayment details.
+  - Make repayments for pending loans.
+  - View due dates and loan status.
+  
+- **Admins**:
+  - View, approve, and reject loan applications.
+  
+- **Authentication**:
+  - Secure JWT-based login for both consumers and admins.
+  
+- **Error Handling**:
+  - Clear error messages for failed actions or API calls.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js, Axios, React Router
+- **Backend**: Node.js, Express, JWT for authentication, MongoDB/SQLite for data storage
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To set up the app locally, follow these steps:
 
-### `npm run build`
+### 1. Clone the Repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/yourusername/loan-repayment-app.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2.Install Dependencies
+Navigate to the project directories and install dependencies for both backend and frontend.
 
-### `npm run eject`
+#### Backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+cd backend
+npm install
+```
+#### Frontend
+```bash
+cd frontend
+npm install
+```
+### 3. Set Up Environment Variables Backend
+Create a .env file in the backend directory and add the following variables:
+```env
+ACCESS_TOKEN='secret_token'
+PORT=3008
+```
+### 4.Start the Development Server
+To start the servers:
+#### Backend
+```bash
+cd backend
+node index.js
+```
+#### Frontend
+```bash
+cd frontend
+npm start
+```
+The frontend will run on http://localhost:3000, and the backend will run on http://localhost:3008.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Usage
+- Consumer Login: Log in to view and manage your loan repayments.
+- Admin Login: Log in to manage all loans (approve or reject).
+- Repayment List: Make repayments on pending loans.
+- Loan Approval: Admins can change the status of loans.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Endpoints
+### /loans
+-  **GET**: Retrieve loans (all loans for admins; individual loans for consumers).
+- **POST**: Consumers can create a new loan.
+- **PATCH**: Admins can approve or reject loans.
+### /repayments
+- **GET**: Retrieve repayment information for the logged-in user.
+- **POST**: Make a repayment for a loan.
+Authentication
+- **Login**: POST to /login with email and password to receive a JWT.
+- **Register**: POST to /register with email and password to register
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deployment
+The app can be deployed using:
 
-## Learn More
+**Full stack**: Netlify and Vercel.  
+**Backend**: Heroku or DigitalOcean.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contact
+For questions or feedback, feel free to reach out at [upenderdeshaboina12@gmail.com](mailto:upenderdeshaboina12@gmail.com).
